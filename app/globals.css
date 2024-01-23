@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,6 +25,34 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.leaflet-container {
+  width: 100vw;       /* 100% of the viewport width */
+  height: 100vh;      /* 100% of the viewport height */
+  position: fixed;    /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: 0;
+  z-index: 100;       /* Ensure it's above other content; adjust as necessary */
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* or 'absolute' if the parent is relative */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: rgba(255, 255, 255, 0.7); Semi-transparent white background*/
+  z-index: 1000; /* High z-index to cover the screen */
+}
+
+.loader {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  color: #fafafa; /* Text color for the loader */
+  /* Add more styles if needed, such as animations */
 }
 
 @layer utilities {
